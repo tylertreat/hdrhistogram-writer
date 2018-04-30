@@ -46,7 +46,7 @@ func WriteDistribution(hist *hdrhistogram.Histogram, percentiles Percentiles, sc
 // percentiles is nil, it defaults to a logarithmic percentile scale. The
 // scaleFactor is used to scale values.
 func WriteDistributionFile(hist *hdrhistogram.Histogram, percentiles Percentiles, scaleFactor float64, file string) error {
-	f, err := os.Open(file)
+	f, err := os.OpenFile(file, os.O_WRONLY, 0644)
 	if err != nil {
 		f, err = os.Create(file)
 		if err != nil {
