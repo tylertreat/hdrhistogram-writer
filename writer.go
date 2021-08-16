@@ -7,7 +7,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/codahale/hdrhistogram"
+	"github.com/HdrHistogram/hdrhistogram-go"
 )
 
 // WriteDistribution writes the percentile distribution of a Histogram in a
